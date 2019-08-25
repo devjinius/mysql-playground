@@ -44,20 +44,7 @@ const reducer = (state, { type, payload }) => {
 };
 
 const App = () => {
-  const [carts, dispatch] = useReducer(reducer, [
-    {
-      id: makeId(),
-      name: 'test',
-      price: 10,
-      quantity: 10
-    },
-    {
-      id: makeId(),
-      name: 'test2',
-      price: 100,
-      quantity: 4
-    }
-  ]);
+  const [carts, dispatch] = useReducer(reducer, []);
   return (
     <Wrapper>
       <CartInput dispatch={dispatch}></CartInput>
