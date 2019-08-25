@@ -4,10 +4,10 @@ import TotalCart from './TotalCart';
 
 const getTotal = carts => carts.reduce((acc, cur) => (acc += cur.price * cur.quantity), 0);
 
-const CartShow = ({ carts }) => {
+const CartShow = ({ carts, dispatch }) => {
   return (
     <>
-      <CartList carts={carts}></CartList>
+      <CartList carts={carts} dispatch={dispatch}></CartList>
       <hr />
       <TotalCart total={getTotal(carts)}></TotalCart>
     </>

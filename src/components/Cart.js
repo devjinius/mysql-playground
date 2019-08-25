@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 const Item = styled.div``;
 
-const Cart = ({ id, name, price, quantity }) => {
+const Cart = ({ id, name, price, quantity, onIncrement, onDecrement, onDelete }) => {
   return (
     <Item>
       {name} ({price}) : {quantity}
-      <button>+1</button>
-      <button>-1</button>
-      <button>삭제</button>
+      <button onClick={() => onIncrement(id)}>+1</button>
+      <button onClick={() => onDecrement(id)}>-1</button>
+      <button onClick={() => onDelete(id)}>삭제</button>
     </Item>
   );
 };
