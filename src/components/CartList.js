@@ -1,7 +1,10 @@
 import React from 'react';
+import Cart from './Cart';
 
-const CartList = () => {
-  return <div>this is cartList</div>;
+const getCartComp = carts => carts.map(cart => <Cart {...cart}></Cart>);
+
+const CartList = ({ carts }) => {
+  return <div>{getCartComp(carts)}</div>;
 };
 
 export default CartList;

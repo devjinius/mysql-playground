@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TotalCart = () => {
-  return <div>this is the total cart</div>;
+const TotalCart = ({ total }) => {
+  return <div>Total : {total}</div>;
 };
 
 export default TotalCart;
