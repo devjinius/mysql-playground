@@ -29,9 +29,11 @@ const reducer = (state, { type, payload }) => {
       });
     case 'ADD':
       return [
-        state,
+        ...state,
         {
-          ...payload
+          id: makeId(),
+          ...payload,
+          quantity: 0
         }
       ];
     case 'DELETE':
