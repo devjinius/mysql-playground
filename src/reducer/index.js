@@ -1,4 +1,4 @@
-import { makeId } from 'simple-util-js';
+// import { makeId } from 'simple-util-js';
 
 export const cartReducer = (state, { type, payload }) => {
   switch (type) {
@@ -6,31 +6,22 @@ export const cartReducer = (state, { type, payload }) => {
       return payload;
     case 'INCREMENT':
       return state.map(item => {
-        if (item.id === payload) {
-          item.quantity = item.quantity + 1;
-          return item;
+        if (item.id === payload.id) {
+          return payload;
         }
 
         return item;
       });
     case 'DECREMENT':
       return state.map(item => {
-        if (item.id === payload) {
-          item.quantity = item.quantity <= 0 ? 0 : item.quantity - 1;
-          return item;
+        if (item.id === payload.id) {
+          return payload;
         }
 
         return item;
       });
     case 'ADD':
-      return [
-        ...state,
-        {
-          id: makeId(),
-          ...payload,
-          quantity: 0
-        }
-      ];
+      return [...state, payload];
     case 'DELETE':
       return state.filter(item => item.id !== payload);
     default:

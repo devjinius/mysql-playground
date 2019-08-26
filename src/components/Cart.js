@@ -7,8 +7,8 @@ const Cart = ({ id, name, price, quantity, onIncrement, onDecrement, onDelete })
   return (
     <Item>
       {name} ({price}) : {quantity}
-      <button onClick={() => onIncrement(id)}>+1</button>
-      <button onClick={() => onDecrement(id)}>-1</button>
+      <button onClick={() => onIncrement(id, quantity)}>+1</button>
+      <button onClick={() => onDecrement(id, quantity)}>-1</button>
       <button onClick={() => onDelete(id)}>삭제</button>
     </Item>
   );
